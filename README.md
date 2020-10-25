@@ -1,14 +1,9 @@
 # React form
 
-```diff
 + form
 + localization
-```
-
-```diff
-- validate (70%)
-- styles (10%)
-```
++ validate (70%)
++ styles (10%)
 
 ## Clone
 
