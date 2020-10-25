@@ -1,10 +1,9 @@
-# form-validate-with-styles-localize
+# React form
 
 + form
-+ validate
 + localization
-+ styles
-+ react
++ validate (70%)
++ styles (10%)
 
 ## Clone
 
@@ -12,8 +11,8 @@
 
 ## Setup
 
-`yarn init`
+`yarn install`
 
 ## Run
 
-### `yarn start`
+`yarn start`
