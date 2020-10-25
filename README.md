@@ -11,7 +11,7 @@
 
 ## Setup
 
-`yarn init`
+`yarn install`
 
 ## Run
 
