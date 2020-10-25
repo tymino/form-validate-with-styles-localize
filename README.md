@@ -1,10 +1,13 @@
-# form-validate-with-styles-localize
+# React form
 
+```diff
 + form
-+ validate
 + localization
-+ styles
-+ react
+```
+```diff
+- validate (70%)
+- styles (10%)
+```
 
 ## Clone
 
@@ -16,4 +19,4 @@
 
 ## Run
 
-### `yarn start`
+`yarn start`
