@@ -13,6 +13,7 @@ const Form = ({ localLang, mainThemeClass }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
@@ -23,7 +24,7 @@ const Form = ({ localLang, mainThemeClass }) => {
       }
     }
   }, [errors, isSubmitting]);
-
+  
   const handleChange = e => {
     setForm({
       ...form,
@@ -45,8 +46,8 @@ const Form = ({ localLang, mainThemeClass }) => {
 
   const validate = () => {
     let err = {};
-    const errClassName = 'error-input';
-    const acceptedClassName = 'accepted-input';
+    const errClassName = '--error';
+    const acceptedClassName = '--accepted';
 
     if(!form.firstName) { err.firstName = errClassName; }
     else { err.firstName = acceptedClassName; }
@@ -57,6 +58,7 @@ const Form = ({ localLang, mainThemeClass }) => {
     return err;
   }
 
+  // console.log(localLang);
   return (
     <div className={`form form--${mainThemeClass}`}>
       {isSubmitting

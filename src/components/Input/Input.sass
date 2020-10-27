@@ -1,17 +1,35 @@
-.input
+.input-wrapper
   margin: 6px 0px
+  box-sizing: border-box
 
-  & > input
-    padding: 6px
+.input
+  padding: 6px
+  font-size: 1.2rem
+  font-weight: 400
 
   &--default
-    & > input
-      font-size: 1.2rem
-      font-weight: 400
 
+    &--error
+      border: 2px solid red
+    &--accepted
+      border: 2px solid green
 
-.error-input
-  border: 2px solid red
+  &--dark
+    border: 2px solid #ffffff
+    background: #000000
+    color: #ffffff
 
-.accepted-input
-  border: 2px solid green
+    &--error
+      border: 2px solid #ff0000
+      background: #000000
+      color: #ffffff
+      &::placeholder
+        color: #a50000
+
+    &--accepted
+      border: 2px solid #00d300
+      background: #000000
+      color: #00d300
+
+  &--orange
+    border: 2px solid #ffffff

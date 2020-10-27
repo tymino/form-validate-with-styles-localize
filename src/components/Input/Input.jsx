@@ -8,14 +8,17 @@ const Input = ({
   error,
   mainTheme
 }) => {
+  const errClassName = error ? error : '';
+
   return (
-    <div className={`input input--${mainTheme}`}>
+    <div className='input-wrapper'>
       <input
-        className={error ? error : null}
+        className={`input input--${mainTheme}${errClassName}`}
         name={name}
         placeholder={placeholder}
         onChange={handleChange}
         value={value}
+        autocomplete='off'
       />
     </div>
   )

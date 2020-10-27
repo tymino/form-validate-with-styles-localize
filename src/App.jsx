@@ -1,28 +1,62 @@
 import { multiLang } from './utils/localization';
 
 import './App.sass';
+import { useState } from 'react';
 
+import Select from './components/Select/Select';
 import Form from './components/Form/Form';
 
 
 const App = () => {
-  const setLocalLang = () => {
-    const localLang = 'en';
+  const initLangs = () => {
+    let langArr = [];
 
-    return multiLang[localLang];
+    for(let key in multiLang) {
+      langArr.push(key);
+    }
+    return langArr;
   };
-  
-  const setMainTheme = () => {
-    const mainTheme = 'default';
 
-    return mainTheme;
+  const [localLang, setLocalLang] = useState({
+    active: 'ru',
+    arrayData: initLangs()
+  });
+  const [activeStyle, setActiveStyle] = useState({
+    active: 'dark',
+    arrayData: ['default', 'dark', 'orange']
+  });
+
+  const handleChangeLang = e => {
+    setLocalLang({
+      ...localLang,
+      active: e.target.value
+    });
+  };
+
+  const handleChangeStyle = e => {
+    setActiveStyle({
+      ...activeStyle,
+      active: e.target.value
+    });
   };
 
   return (
-    <main className='form-container'>
+    <main
+      className={`main main--${activeStyle.active}`
+    }>
+      <div className='main__select'>
+        <Select
+          data={localLang}
+          handleChange={handleChangeLang}
+        />
+        <Select
+          data={activeStyle}
+          handleChange={handleChangeStyle}
+        />
+      </div>
       <Form
-        localLang={setLocalLang()}
-        mainThemeClass={setMainTheme()}
+        localLang={multiLang[localLang.active]}
+        mainThemeClass={activeStyle.active}
       />
     </main>
   );
