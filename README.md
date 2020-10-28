@@ -1,9 +1,9 @@
 # React form
 
-+ form
-+ localization
-+ validate (70%)
-+ styles (10%)
++ Форма (имя, фамилия, "отправить")
++ Выбор языка (ru, en)
++ Проверка полей (70%)
++ Выбор стилей (default, dark, orange) (50%)
 
 ## Clone
 
