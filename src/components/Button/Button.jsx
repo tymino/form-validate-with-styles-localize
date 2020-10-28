@@ -2,9 +2,10 @@ import './Button.sass';
 
 const Button = ({ handleSubmit, buttonText, mainTheme }) => {
   return (
-    <div className={`button button--${mainTheme}`}>
+    <div className='button-wrapper'>
       <button
         onClick={handleSubmit}
+        className={`button button--${mainTheme}`}
       >
         {buttonText}
       </button>

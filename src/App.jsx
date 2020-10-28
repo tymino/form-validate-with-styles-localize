@@ -22,7 +22,7 @@ const App = () => {
     arrayData: initLangs()
   });
   const [activeStyle, setActiveStyle] = useState({
-    active: 'dark',
+    active: 'orange',
     arrayData: ['default', 'dark', 'orange']
   });
 

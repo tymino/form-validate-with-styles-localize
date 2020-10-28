@@ -1,35 +1,63 @@
+@import '../../utils/variables'
+  
 .input-wrapper
   margin: 6px 0px
-  box-sizing: border-box
 
 .input
   padding: 6px
   font-size: 1.2rem
   font-weight: 400
+  outline: none
+  border-radius: 5px
 
   &--default
+    border: 2px solid $colorBlack
+    background: $colorWhite
+    color: $colorBlack
 
     &--error
-      border: 2px solid red
+      border: 2px solid $colorRed
+      background: $colorWhite
+      color: $colorBlack
+      &::placeholder
+        color: $colorRed
     &--accepted
-      border: 2px solid green
+      border: 2px solid $colorGreen
+      background: $colorWhite
+      color: $colorGreen
 
   &--dark
-    border: 2px solid #ffffff
-    background: #000000
-    color: #ffffff
+    border: 2px solid $colorWhite
+    background: $colorBlack
+    color: $colorWhite
 
     &--error
-      border: 2px solid #ff0000
-      background: #000000
-      color: #ffffff
+      border: 2px solid $colorRed
+      background: $colorBlack
+      color: $colorWhite
       &::placeholder
-        color: #a50000
+        color: $colorRed
 
     &--accepted
-      border: 2px solid #00d300
-      background: #000000
-      color: #00d300
+      border: 2px solid $colorGreen
+      background: $colorBlack
+      color: $colorGreen
 
   &--orange
-    border: 2px solid #ffffff
+    border: 2px solid $colorWhite
+    background: $colorOrange
+    color: $colorWhite
+    &::placeholder
+        color: $colorGray
+
+    &--error
+      border: 2px solid $colorRed
+      background: $colorOrange
+      color: $colorWhite
+      &::placeholder
+        color: $colorRed
+
+    &--accepted
+      border: 2px solid $colorGreen
+      background: $colorOrange
+      color: $colorGreen

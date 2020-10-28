@@ -1,11 +1,33 @@
-.button
+@import '../../utils/_variables'
+
+
+.button-wrapper
   margin: 10px 0px
 
-  & > button
-    min-width: 80px
-    padding: 6px 10px
-    font-size: 1rem
+.button
+  min-width: 80px
+  padding: 6px 10px
+  font-size: 1rem
+  outline: none
+  font-weight: 700
+  border-radius: 5px
+
+  &:hover
+    background: $colorGreen
+    border: 2px solid $colorGray
+    color: $colorGray
 
   &--default
-    & > button
-      font-weight: 500
+    background: $colorBlack
+    border: 2px solid $colorWhite
+    color: $colorWhite
+
+  &--dark
+    background: $colorWhite
+    border: 2px solid $colorBlack
+    color: $colorBlack
+
+  &--orange
+    background: $colorGray
+    border: 2px solid $colorOrange
+    color: $colorOrange
