@@ -22,7 +22,7 @@ const App = () => {
     arrayData: initLangs()
   });
   const [activeStyle, setActiveStyle] = useState({
-    active: 'orange',
+    active: 'default',
     arrayData: ['default', 'dark', 'orange']
   });
 
@@ -48,10 +48,12 @@ const App = () => {
         <Select
           data={localLang}
           handleChange={handleChangeLang}
-        />
+          mainTheme={activeStyle.active}
+          />
         <Select
           data={activeStyle}
           handleChange={handleChangeStyle}
+          mainTheme={activeStyle.active}
         />
       </div>
       <Form

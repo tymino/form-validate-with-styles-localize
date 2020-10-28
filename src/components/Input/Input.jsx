@@ -18,7 +18,7 @@ const Input = ({
         placeholder={placeholder}
         onChange={handleChange}
         value={value}
-        autocomplete='off'
+        autoComplete='off'
       />
     </div>
   )
