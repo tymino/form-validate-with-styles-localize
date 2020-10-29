@@ -7,8 +7,8 @@ import Button from '../Button/Button';
 
 const Form = ({ localLang, mainThemeClass }) => {
   const [form, setForm] = useState({
-    firstName: 'qwe',
-    secondName: 'qwe'
+    firstName: '',
+    secondName: ''
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
