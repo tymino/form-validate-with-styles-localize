@@ -51,7 +51,8 @@ const Form = ({ localLang, mainThemeClass }) => {
     setForm({
       firstName: '',
       secondName: ''
-    })
+    });
+    setErrors({});
     setIsSubmitting(false);
   }
 
