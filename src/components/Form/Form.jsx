@@ -1,47 +1,58 @@
 import './Form.sass';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Title from '../Title/Title';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
 const Form = ({ localLang, mainThemeClass }) => {
   const [form, setForm] = useState({
-    firstName: '',
-    secondName: ''
+    firstName: 'qwe',
+    secondName: 'qwe'
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  
-  useEffect(() => {
-    if (isSubmitting) {
-      if (Object.keys(errors).length === 0) {
-        // send data
-      }
-      else {
-        setIsSubmitting(false);
-      }
-    }
-  }, [errors, isSubmitting]);
+  // useEffect(() => {
+  //   if (isSubmitting) {
+  //     if (Object.keys(errors).length === 0) {
+  //       // send data
+  //     }
+  //     else {
+  //       setIsSubmitting(false);
+  //     }
+  //   }
+  // }, [errors, isSubmitting]);
   
   const handleChange = e => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
+    const regexp = /[^a-zA-Zа-яА-Я]/g;
+
+    if (e.target.value.match(regexp)) {
+      // console.log('err');
+    } else {
+      setForm({
+        ...form,
+        [e.target.name]: e.target.value
+      });
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     const errs = validate();
     setErrors(errs);
 
-    if(errs.firstName || errs.secondName) {
-      console.log('input Error!');
-    } else {
+    if(errs.firstName === '--accepted' && errs.secondName === '--accepted') {
       setIsSubmitting(true);
     }
+  }
+
+  const handleReset = () => {
+    setForm({
+      firstName: '',
+      secondName: ''
+    })
+    setIsSubmitting(false);
   }
 
   const validate = () => {
@@ -58,13 +69,8 @@ const Form = ({ localLang, mainThemeClass }) => {
     return err;
   }
 
-  // console.log(localLang);
   return (
     <div className={`form form--${mainThemeClass}`}>
-      {isSubmitting
-        ? <div>Отправка</div>
-        : <div></div>
-      }
       <Title
         value={localLang.titleName}
         mainTheme={mainThemeClass}
@@ -85,11 +91,20 @@ const Form = ({ localLang, mainThemeClass }) => {
         error={errors.secondName ? errors.secondName : null}
         mainTheme={mainThemeClass}
       />
-      <Button
-        handleSubmit={handleSubmit}
-        buttonText={localLang.buttonText.primary}
-        mainTheme={mainThemeClass}
-      />
+      {isSubmitting
+        ?
+        <Button
+          handleSubmit={handleReset}
+          buttonText={localLang.buttonText.secondary}
+          mainTheme={mainThemeClass}
+        />
+        :
+        <Button
+          handleSubmit={handleSubmit}
+          buttonText={localLang.buttonText.primary}
+          mainTheme={mainThemeClass}
+        />
+      }
     </div>
   );
 };
