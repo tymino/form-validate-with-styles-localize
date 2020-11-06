@@ -4,7 +4,7 @@ import './App.sass';
 import { useState } from 'react';
 
 import Select from './components/Select/Select';
-import Form from './components/Form/Form';
+import Form from './containers/Form/Form';
 
 
 const App = () => {
@@ -41,7 +41,7 @@ const App = () => {
   };
 
   return (
-    <main
+    <div
       className={`main main--${activeStyle.active}`
     }>
       <div className='main__select'>
@@ -60,7 +60,7 @@ const App = () => {
         localLang={multiLang[localLang.active]}
         mainThemeClass={activeStyle.active}
       />
-    </main>
+    </div>
   );
 };
 

@@ -1,9 +1,9 @@
 import './Form.sass';
 
 import { useState } from 'react';
-import Title from '../Title/Title';
-import Input from '../Input/Input';
-import Button from '../Button/Button';
+import Title from '../../components/Title/Title';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const Form = ({ localLang, mainThemeClass }) => {
   const [form, setForm] = useState({
